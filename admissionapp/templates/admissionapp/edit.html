@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admission - Update</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    {% load static %}
+  </head>
+  <form method="POST" class="post-form" action="/update/{{student.id}}">
+    {% csrf_token %}
+    <div class="container">
+      <br />
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <h3>Form Update</h3>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Admission Mode: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="adm_mode"
+            id="id_adm_mode"
+            required
+            maxlength="20"
+            value="{{ student.adm_mode }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Admission Number: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="sid"
+            id="id_sid"
+            required
+            maxlength="20"
+            value="{{ student.sid }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Admission Date: </label>
+        <div class="col-sm-4">
+          <div class="input-group date" data-target-input="nearest">
+            <input
+              type="text"
+              name="adm_date"
+              id="id_adm_date"
+              required
+              maxlength="20"
+              value="{{ student.adm_date }}"
+            />
+            <script>
+              $(function () {
+                $(".datetime-input").datetimepicker({
+                  format: "YYYY-MM-DD",
+                });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Category: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="category"
+            id="id_category"
+            required
+            maxlength="20"
+            value="{{ student.category }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Branch: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="branch"
+            id="id_branch"
+            required
+            maxlength="20"
+            value="{{ student.branch }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Student Name: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="sname"
+            id="id_sname"
+            required
+            maxlength="20"
+            value="{{ student.sname }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Date of Birth: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="sdob"
+            id="id_sdob"
+            required
+            maxlength="20"
+            value="{{ student.sdob }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Quota: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="quota"
+            id="id_quota"
+            required
+            maxlength="20"
+            value="{{ student.quota }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">TNEA No.: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="tneanum"
+            id="id_tneanum"
+            required
+            maxlength="20"
+            value="{{ student.tneanum }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Admitted Quota: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="admquota"
+            id="id_admquota"
+            required
+            maxlength="20"
+            value="{{ student.admquota }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">First Graduate: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="firstgrad"
+            id="id_firstgrad"
+            required
+            maxlength="20"
+            value="{{ student.firstgrad }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">TN-SC: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="tnscst"
+            id="id_tnscst"
+            required
+            maxlength="20"
+            value="{{ student.tnscst }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">TN-BC: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="tnbc"
+            id="id_tnbc"
+            required
+            maxlength="20"
+            value="{{ student.tnbc }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">AICTE: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="aicte"
+            id="id_aicte"
+            required
+            maxlength="20"
+            value="{{ student.aicte }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Gender: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="sgender"
+            id="id_sgender"
+            required
+            maxlength="20"
+            value="{{ student.sgender }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Medium: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="medium"
+            id="id_medium"
+            required
+            maxlength="20"
+            value="{{ student.medium }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nationality: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="nationality"
+            id="id_nationality"
+            required
+            maxlength="20"
+            value="{{ student.nationality }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Religion: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="religion"
+            id="id_religion"
+            required
+            maxlength="20"
+            value="{{ student.religion }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Community: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="community"
+            id="id_community"
+            required
+            maxlength="20"
+            value="{{ student.community }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Caste: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="caste"
+            id="id_caste"
+            required
+            maxlength="20"
+            value="{{ student.caste }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Blood Group: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="bloodgroup"
+            id="id_bloodgroup"
+            required
+            maxlength="20"
+            value="{{ student.bloodgroup }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Aadhar: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="saadhar"
+            id="id_saadhar"
+            required
+            maxlength="20"
+            value="{{ student.saadhar }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mobile: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="smobilenum"
+            id="id_smobilenum"
+            required
+            maxlength="20"
+            value="{{ student.smobilenum }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mail: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="smail"
+            id="id_smail"
+            required
+            maxlength="20"
+            value="{{ student.smail }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Colege mode: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="scolmode"
+            id="id_scolmode"
+            required
+            maxlength="20"
+            value="{{ student.scolmode }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Phy Challenged: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="phychallenged"
+            id="id_phychallenged"
+            required
+            maxlength="20"
+            value="{{ student.phychallenged }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Father Name: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="fathername"
+            id="id_fathername"
+            required
+            maxlength="20"
+            value="{{ student.fathername }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Mother Name: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="mothername"
+            id="id_mothername"
+            required
+            maxlength="20"
+            value="{{ student.mothername }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Guardian: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="guardianname"
+            id="id_guardianname"
+            required
+            maxlength="20"
+            value="{{ student.guardianname }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Com Address: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="comaddress"
+            id="id_comaddress"
+            required
+            maxlength="20"
+            value="{{ student.comaddress }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Perm address: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="permaddress"
+            id="id_permaddress"
+            required
+            maxlength="20"
+            value="{{ student.permaddress }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">State: </label>
+        <div class="col-sm-4">
+          <input
+            type="text"
+            name="state"
+            id="id_state"
+            required
+            maxlength="20"
+            value="{{ student.state }}"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-success">Update</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</html>

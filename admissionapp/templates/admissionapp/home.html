@@ -1,0 +1,84 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">  
+    <title>Student Records</title>  
+     {% load static %}
+</head>  
+<body> 
+    <center style="margin-top: 17%;">
+        <div class = "btn-group-justified btn-group-sm btn-group-vertical">
+                <h1> Home Page </h1>
+                <br>
+                <!-- Display -->
+                <form method="POST" class="post-form" id="display">
+                    {% csrf_token %} 
+                    <input class="form-control" type="text" placeholder="ID">
+                    <small id="displayerr"></small>
+                </form>
+                <button class="btn btn-primary" onclick="displayPage()">Display</button>
+                <script>
+                    function displayPage() {
+                      var x = document.getElementById("display");
+                      var text = x.elements[1].value;
+                      if (text === '') {
+                        document.getElementById("displayerr").innerHTML = "Please enter a ID";
+                      } else {
+                            var link = "http://127.0.0.1:8000/display/" + text.toString()
+                            window.open(link, "_self")
+                            document.getElementById("display").reset()
+                      }   
+                    }
+                </script>
+                <br>
+                <!--  Edit -->
+                <form method="POST" class="post-form" id="edit">
+                    {% csrf_token %} 
+                    <input class="form-control" type="text" placeholder="ID">
+                    <small id="editerr"></small>
+                </form>
+                <button class="btn btn-primary" onclick="editPage()">Edit</button>
+                <script>
+                    function editPage() {
+                    var x = document.getElementById("edit");
+                    var text = x.elements[1].value;
+                    if (text === '') {
+                        document.getElementById("editerr").innerHTML = "Please enter a ID";
+                      } else {
+                            var link = "http://127.0.0.1:8000/edit/" + text.toString()
+                            window.open(link, "_self")
+                            document.getElementById("edit").reset()
+                      }  
+                    }
+                </script>
+                <br>
+                <!-- Delete -->
+                <form method="POST" class="post-form" id="delete">
+                    {% csrf_token %} 
+                    <input class="form-control" type="text" placeholder="ID">
+                    <small id="deleteerr"></small>
+                </form>
+                <button class="btn btn-primary" onclick="deletePage()">Delete</button>
+                <small id="deletesucc"></small>
+                <script>
+                    function deletePage() {
+                    var x = document.getElementById("delete");          
+                    var text = x.elements[1].value;
+                    if (text === '') {
+                        document.getElementById("deleteerr").innerHTML = "Please enter a ID";
+                      } else {
+                            var link = "http://127.0.0.1:8000/delete/" + text.toString()
+                            window.open(link, "_self")
+                            document.getElementById("delete").reset()
+                            document.getElementById("deletesucc").innerHTML = "Deleted successfully";                      } 
+                    }
+                </script>
+
+                <a href="/studform" class="btn btn-primary">Create</a>
+        </div>
+    </center>
+</body>  
+</html>

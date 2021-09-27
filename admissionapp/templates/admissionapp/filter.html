@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Student Filter</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Student Filter</h1>
+    <form method="POST" class="post-form" id="display">
+      {% csrf_token %}
+      <input type="Checkbox" name="blue" value="blue" checked />Blue
+      <input type="Checkbox" name="red" value="red" />Red
+      <input type="Checkbox" name="green" value="green" />Green
+      <small id="displayerr"></small>
+    </form>
+    <button class="btn btn-primary" onclick="displayPage()">Display</button>
+    <script>
+      function displayPage() {
+        var x = document.getElementById("display");
+        var text = x.elements[1].value;
+        var box = "";
+        var val = "";
+        for (var i = 0, length = x.length; i < length; i++) {
+          if (x[i].checked) {
+            val = x[i].value;
+            box = box + val;
+          }
+        }
+        document.getElementById("displayerr").innerHTML = box;
+      }
+    </script>
+  </body>
+</html>

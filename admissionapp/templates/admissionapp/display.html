@@ -1,0 +1,153 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">  
+    <title>Student Records</title>
+    <style>
+        th, td{
+           border: 1px solid black;
+        }
+
+        th {
+                text-transform: uppercase;
+        }
+     </style>
+     {% load static %}  
+</head>  
+<body>
+        <h1 style="text-align: center; margin-top: 3%;">Student Details</h1>
+        <table class="table table-striped" style="width:35%; border: 2px solid black; margin: 2% 5% 5% 31%;">
+                <!-- top,  right, bottom, left-->
+                <tr>
+                        <th>Admission Mode: </th>
+                        <td>{{ student.adm_mode }}</td>
+                </tr>
+                <tr>
+                        <th>Admission Number: </th>  
+                        <td>{{ student.sid }}</td>
+                </tr>
+                <tr>
+                        <th>Admission Date: </th>  
+                        <td>{{ student.adm_date }}</td>
+                </tr>
+                <tr>
+                        <th>Category: </th>  
+                        <td>{{ student.category }}</td>
+                </tr>
+                <tr>
+                        <th>Branch: </th>  
+                        <td>{{ student.branch }}</td>
+                </tr>
+                <tr>
+                        <th>Student Name: </th>  
+                        <td>{{ student.sname }}</td>
+                </tr>
+                <tr>
+                        <th>Date of Birth: </th>    
+                        <td>{{ student.sdob }}</td>
+                </tr>
+                <tr>
+                        <th>Quota: </th>  
+                        <td>{{ student.quota }}</td>
+                </tr>
+                <tr>
+                        <th>TNEA No.: </th>  
+                        <td>{{ student.tneanum }}</td>
+                </tr>
+                <tr>
+                        <th>Admitted Quota: </th>  
+                        <td>{{ student.admquota }}</td>
+                </tr>
+                <tr>
+                        <th>First Graduate: </th>  
+                        <td>{{ student.firstgrad }}</td>
+                </tr>
+                <tr>
+                        <th>TN-SC: </th>  
+                        <td>{{ student.tnscst }}</td>
+                </tr>
+                <tr>
+                        <th>TN-BC: </th>  
+                        <td>{{ student.tnbc }}</td>
+                </tr>
+                <tr>
+                        <th>AICTE: </th>  
+                        <td>{{ student.aicte }}</td>
+                </tr>
+                <tr>
+                        <th>Gender: </th>  
+                        <td>{{ student.sgender }}</td>
+                </tr>
+                <tr>
+                        <th>Medium: </th>  
+                        <td>{{ student.medium }}</td>
+                </tr>
+                <tr>
+                        <th>Nationality: </th>  
+                        <td>{{ student.nationality }}</td>
+                </tr>
+                <tr>
+                        <th>Religion: </th>  
+                        <td>{{ student.religion }}</td>
+                </tr>
+                <tr>
+                        <th>Community: </th>  
+                        <td>{{ student.community }}</td>
+                </tr>
+                <tr>
+                        <th>Caste: </th>  
+                        <td>{{ student.caste }}</td>
+                </tr>
+                <tr>
+                        <th>Blood Group: </th>  
+                        <td>{{ student.bloodgroup }}</td>
+                </tr>
+                <tr>
+                        <th>Aadhar: </th>  
+                        <td>{{ student.saadhar }}</td>
+                </tr>
+                <tr>
+                        <th>Mobile: </th>  
+                        <td>{{ student.smobilenum }}</td>
+                </tr>
+                <tr>
+                        <th>Mail: </th>  
+                        <td>{{ student.smail }}</td>
+                </tr>
+                <tr>
+                        <th>Colege mode: </th>  
+                        <td>{{ student.scolmode }}</td>
+                </tr>
+                <tr>
+                        <th>Phy Challenged: </th>  
+                        <td>{{ student.phychallenged }}</td>
+                </tr>
+                <tr>
+                        <th>Father Name: </th>  
+                        <td>{{ student.fathername }}</td>
+                </tr>
+                <tr>
+                        <th>Mother Name: </th>  
+                        <td>{{ student.mothername }}</td>
+                </tr>
+                <tr>
+                        <th>Guardian: </th>  
+                        <td>{{ student.guardianname }}</td>
+                </tr>
+                <tr>
+                        <th>Com Address: </th>  
+                        <td>{{ student.comaddress }}</td>
+                </tr>
+                <tr>
+                        <th>Perm address: </th>  
+                        <td>{{ student.permaddress }}</td>
+                </tr>
+                <tr>
+                        <th>State: </th>  
+                        <td>{{ student.state }}</td>
+                </tr>
+        </table>  
+        
+</body>
+</html>

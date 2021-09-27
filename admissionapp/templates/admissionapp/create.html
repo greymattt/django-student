@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admission - Create</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    {% load static %}
+</head>
+<form class="post-form" method="POST" action="/studform">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Form Create</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Admission Mode: </label>  
+    <div class="col-sm-4">  
+        {{ form.adm_mode }} 
+    </div>
+  </div> 
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Admission Number: </label>  
+    <div class="col-sm-4">  
+        {{ form.sid }}  
+    </div>  
+  </div> 
+
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Admission Date: </label>  
+    <div class="col-sm-4">  
+        <div class="input-group date" data-target-input="nearest">
+            {{ form.adm_date }}
+            <script>
+            $(function () {
+                $('.datetime-input').datetimepicker({
+                    format:'YYYY-MM-DD'
+                });
+            });
+            </script>
+        </div>
+    </div>  
+  </div> 
+
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Category: </label>  
+    <div class="col-sm-4">  
+    {{ form.category }} 
+    </div>  
+  </div>
+
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Branch: </label>  
+    <div class="col-sm-4">  
+        {{ form.branch }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Student Name: </label>  
+    <div class="col-sm-4">  
+        {{ form.sname }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Date of Birth: </label>  
+    <div class="col-sm-4">  
+        {{ form.sdob }}
+    </div>  
+  </div>
+
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Quota: </label>  
+    <div class="col-sm-4">  
+        {{ form.quota }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">TNEA No.: </label>  
+    <div class="col-sm-4">  
+        {{ form.tneanum }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Admitted Quota: </label>  
+    <div class="col-sm-4">  
+        {{ form.admquota }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">First Graduate: </label>  
+    <div class="col-sm-4">  
+        {{ form.firstgrad }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">TN-SC: </label>  
+    <div class="col-sm-4">  
+        {{ form.tnscst }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">TN-BC: </label>  
+    <div class="col-sm-4">  
+        {{ form.tnbc }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">AICTE: </label>  
+    <div class="col-sm-4">  
+        {{ form.aicte }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Gender: </label>  
+    <div class="col-sm-4">  
+        {{ form.sgender }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Medium: </label>  
+    <div class="col-sm-4">  
+        {{ form.medium }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Nationality: </label>  
+    <div class="col-sm-4">  
+        {{ form.nationality }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Religion: </label>  
+    <div class="col-sm-4">  
+        {{ form.religion }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Community: </label>  
+    <div class="col-sm-4">  
+        {{ form.community }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Caste: </label>  
+    <div class="col-sm-4">  
+        {{ form.caste }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Blood Group: </label>  
+    <div class="col-sm-4">  
+        {{ form.bloodgroup }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Aadhar: </label>  
+    <div class="col-sm-4">  
+        {{ form.saadhar }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Mobile: </label>  
+    <div class="col-sm-4">  
+        {{ form.smobilenum }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Mail: </label>  
+    <div class="col-sm-4">  
+        {{ form.smail }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Colege mode: </label>  
+    <div class="col-sm-4">  
+        {{ form.scolmode }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Phy Challenged: </label>  
+    <div class="col-sm-4">  
+        {{ form.phychallenged }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Father Name: </label>  
+    <div class="col-sm-4">  
+        {{ form.fathername }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Mother Name: </label>  
+    <div class="col-sm-4">  
+        {{ form.mothername }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Guardian: </label>  
+    <div class="col-sm-4">  
+        {{ form.guardianname }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Com Address: </label>  
+    <div class="col-sm-4">  
+        {{ form.comaddress }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Perm address: </label>  
+    <div class="col-sm-4">  
+        {{ form.permaddress }}
+    </div>  
+  </div>
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">State: </label>  
+    <div class="col-sm-4">  
+        {{ form.state }}
+    </div>  
+  </div>
+
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Create</button>  
+    </div>  
+  </div>  
+    </div>  
+</form> 
+
+</html>
